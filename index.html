@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin - Flower Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="admin-wrap">
+    <section id="loginBox" class="panel">
+      <span class="pill">ADMIN</span>
+      <h1>Quản trị Flower Shop</h1>
+      <p>Đăng nhập bằng Firebase Authentication.</p>
+      <input id="email" type="email" placeholder="Email admin">
+      <input id="password" type="password" placeholder="Mật khẩu">
+      <button id="loginBtn">Đăng nhập</button>
+      <p id="loginMsg" class="msg"></p>
+    </section>
+
+    <section id="adminApp" class="hidden">
+      <header class="admin-head">
+        <div>
+          <span class="pill">ADMIN CONTROL</span>
+          <h1>Quản lý cửa hàng</h1>
+          <p>Thêm/sửa/xóa nội dung User Web mà không cần sửa HTML.</p>
+        </div>
+        <button id="logoutBtn" class="secondary">Đăng xuất</button>
+      </header>
+
+      <section class="panel">
+        <h2 id="formTitle">➕ Thêm loại hoa</h2>
+        <input type="hidden" id="flowerId">
+        <div class="form-grid">
+          <label>Tên hoa<input id="name" placeholder="Ví dụ: Hoa anh đào"></label>
+          <label>Giá<input id="price" type="number" min="0" placeholder="150000"></label>
+          <label>Danh mục<input id="category" placeholder="Hoa mới"></label>
+          <label>Thứ tự<input id="order" type="number" value="999"></label>
+        </div>
+        <label>Link ảnh
+          <input id="image" type="url" placeholder="https://.../hoa.jpg">
+        </label>
+        <label>Mô tả
+          <textarea id="description" placeholder="Mô tả sản phẩm..."></textarea>
+        </label>
+        <label class="check"><input id="active" type="checkbox" checked> Hiển thị trên User Web</label>
+        <div>
+          <button id="saveBtn">💾 Lưu hoa</button>
+          <button id="cancelBtn" class="secondary hidden">Hủy sửa</button>
+        </div>
+        <p id="saveMsg" class="msg"></p>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <h2>🌸 Danh sách hoa</h2>
+          <span id="count" class="pill">0 sản phẩm</span>
+        </div>
+        <div id="adminList" class="admin-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="admin.js"></script>
+</body>
+  </html>
+  
